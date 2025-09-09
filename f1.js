@@ -86,6 +86,46 @@
 // -------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------
+What is a Closure?
+
+A closure is created when a function "remembers" its lexical scope (the variables around it) even when the function is executed outside that scope.
+
+👉 In simple words:
+A closure gives you access to an outer function’s variables from an inner function, even after the outer function has finished executing.
+
+1. Data Privacy (Encapsulation)
+  function createBankAccount(initialBalance) {
+  let balance = initialBalance;
+
+  return {
+    deposit(amount) {
+      balance += amount;
+      console.log(`Deposited: ${amount}, Balance: ${balance}`);
+    },
+    withdraw(amount) {
+      if (amount <= balance) {
+        balance -= amount;
+        console.log(`Withdrew: ${amount}, Balance: ${balance}`);
+      } else {
+        console.log("Insufficient funds");
+      }
+    },
+    getBalance() {
+      return balance;
+    }
+  };
+}
+
+const account = createBankAccount(100);
+account.deposit(50);   // Deposited: 50, Balance: 150
+account.withdraw(30);  // Withdrew: 30, Balance: 120
+console.log(account.getBalance()); // 120
+
+
+
+
+
+//----------------------------------------------
 
 // What is Hoisting?
 
@@ -233,6 +273,11 @@
 
 
 // -------------------------------------------------------------------------------------
+What is a Callback Function?
+
+A callback function is a function passed as an argument to another function, and executed after some task is completed.
+
+It’s very useful in asynchronous programming (like reading files, making API calls, or waiting for a timer).
 // 🔸 Callback Functions
 // A callback is a function passed as an argument to another function and called later.
 // function greetUser(name, callback) {

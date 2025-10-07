@@ -1,0 +1,111 @@
+🧩 1. Reverse a String
+
+Q: Write a function to reverse a string.
+Example: "hello" → "olleh"
+
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+console.log(reverseString("hello"));
+
+🔢 2. Check Palindrome
+
+Q: Check if a string is palindrome.
+Example: "madam" → true
+
+function isPalindrome(str) {
+  return str === str.split('').reverse().join('');
+}
+console.log(isPalindrome("madam"));
+
+💯 3. Find Maximum in Array
+
+Q: Find the largest number in an array.
+Example: [2, 5, 1, 9, 6] → 9
+
+function findMax(arr) {
+  return Math.max(...arr);
+}
+console.log(findMax([2, 5, 1, 9, 6]));
+
+🧮 4. Sum of Array Elements
+
+Q: Calculate the sum of all numbers in an array.
+Example: [1, 2, 3] → 6
+
+function sumArray(arr) {
+  return arr.reduce((a, b) => a + b, 0);
+}
+console.log(sumArray([1, 2, 3]));
+
+🔁 5. Factorial of a Number
+
+Q: Find the factorial of a given number.
+Example: 5! → 120
+
+function factorial(n) {
+  if (n === 0) return 1;
+  return n * factorial(n - 1);
+}
+console.log(factorial(5));
+
+🧠 6. Fibonacci Series
+
+Q: Print the first n Fibonacci numbers.
+Example: n = 5 → [0, 1, 1, 2, 3]
+
+function fibonacci(n) {
+  const arr = [0, 1];
+  for (let i = 2; i < n; i++) {
+    arr.push(arr[i - 1] + arr[i - 2]);
+  }
+  return arr;
+}
+console.log(fibonacci(5));
+
+🔍 7. Find Missing Number
+
+Q: Given array [1, 2, 4, 5], find the missing number (1–5).
+Example: Missing → 3
+
+function findMissing(arr, n) {
+  const total = (n * (n + 1)) / 2;
+  const sum = arr.reduce((a, b) => a + b, 0);
+  return total - sum;
+}
+console.log(findMissing([1, 2, 4, 5], 5));
+
+📦 8. Count Occurrences
+
+Q: Count how many times each element appears.
+Example: [1, 2, 2, 3, 3, 3] → {1:1, 2:2, 3:3}
+
+function countOccurrences(arr) {
+  return arr.reduce((acc, val) => {
+    acc[val] = (acc[val] || 0) + 1;
+    return acc;
+  }, {});
+}
+console.log(countOccurrences([1, 2, 2, 3, 3, 3]));
+
+🧾 9. Remove Duplicates
+
+Q: Remove duplicates from an array.
+Example: [1,2,2,3,3] → [1,2,3]
+
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+console.log(removeDuplicates([1,2,2,3,3]));
+
+🔄 10. Find Second Largest Number
+
+Q: Find the second largest element in an array.
+Example: [10, 5, 20, 8] → 10
+
+function secondLargest(arr) {
+  const unique = [...new Set(arr)];
+  unique.sort((a, b) => b - a);
+  return unique[1];
+}
+console.log(secondLargest([10, 5, 20, 8]));
